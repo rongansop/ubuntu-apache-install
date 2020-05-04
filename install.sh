@@ -21,5 +21,5 @@ a2enmod php5.6
 phpenmod -v 5.6 mcrypt
 phpenmod -v 5.6 mbstring
 a2enmod rewrite
-#wget githuburl -O
+wget https://raw.githubusercontent.com/andykimpe/ubuntu-apache-install/master/apache2.conf -O /etc/apache2/apache2.conf
 service apache2 restart
