@@ -2,7 +2,7 @@
 apt-get update
 apt-get -y dist-upgrade
 #apt-get -y install python-software-properties
-apt-get -y install software-properties-common apt-key wget gpg
+apt-get -y install software-properties-common wget gnupg gnupg2
 wget -O- "https://download.opensuse.org/repositories/home:/andykimpe:/ubuntu-$(lsb_release -sc)/xUbuntu_$(lsb_release -sr)/Release.key" | sudo apt-key add -
 sudo rm -f /etc/apt/sources.list.d/*andykimpe*.list
 echo 'deb http://download.opensuse.org/repositories/home:/andykimpe:/ubuntu-'$(lsb_release -sc)'/xUbuntu_'$(lsb_release -sr)'/ /' | sudo tee /etc/apt/sources.list.d/andykimpe.list
