@@ -23,4 +23,15 @@ phpenmod -v 5.6 mcrypt
 phpenmod -v 5.6 mbstring
 a2enmod rewrite
 wget https://raw.githubusercontent.com/andykimpe/ubuntu-apache-install/master/apache2.conf -O /etc/apache2/apache2.conf
-service apache2 restart
+FILE1="/home/xtreamcodes/iptv_xtream_codes/wwwdir/index.php"
+FILE2="/home/streamcreed/wwwdir/index.php"
+if test -f "$FILE1" ;then
+    echo "Ok."
+    service apache2 restart
+else if test -f "$FILE2" ;then
+    echo "OK."
+    service apache2 restart
+else
+    service apache2 restart
+fi
+fi
