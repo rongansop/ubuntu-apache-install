@@ -8,7 +8,7 @@ read -e -p "Enter apache https port: " -i "$PORTSSL" PORTSSL
 apt-get update
 apt-get -y install python-software-properties
 apt-get -y install software-properties-common wget gnupg gnupg2
-apt-get -y purge php php*
+#apt-get -y purge php php*
 apt-get update
 apt-get -y dist-upgrade
 apt-get -y install curl
@@ -55,4 +55,3 @@ sed -i "s/443/$PORTSSL/g" "/etc/apache2/sites-available/default-ssl.conf"
 FILE1="/home/xtreamcodes/iptv_xtream_codes/wwwdir/index.php"
 FILE2="/home/streamcreed/wwwdir/index.php"
 service apache2 restart
-fi
