@@ -1,6 +1,7 @@
 #!/bin/bash
 VERSION=5.6
 PORT=80
+PORTSSL=443
 read -e -p "Enter php mumber version 5.6 or 7.0 or 7.1 or 7.3 or 7.4 or 8.0: " -i "$VERSION" VERSION
 read -e -p "Enter apache http port: " -i "$PORT" PORT
 read -e -p "Enter apache https port: " -i "$PORTSSL" PORTSSL
