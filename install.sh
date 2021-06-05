@@ -1,14 +1,20 @@
 #!/bin/bash
 VERSION=5.6
+PORT=80
 read -e -p "Enter php mumber version 5.6 or 7.0 or 7.1 or 7.3 or 7.4 or 8.0: " -i "$VERSION" VERSION
+read -e -p "Enter apache http port: " -i "$PORT" PORT
+read -e -p "Enter apache https port: " -i "$PORTSSL" PORTSSL
 apt-get update
 apt-get -y install python-software-properties
 apt-get -y install software-properties-common wget gnupg gnupg2
 apt-get -y purge php php*
-apt-get update && apt-get -y dist-upgrade && apt-get -y install curl
+apt-get update
+apt-get -y dist-upgrade
+apt-get -y install curl
 echo 'deb http://download.opensuse.org/repositories/home:/andykimpe/xUbuntu_18.04/ /' | sudo tee /etc/apt/sources.list.d/home:andykimpe.list
 curl -fsSL https://download.opensuse.org/repositories/home:andykimpe/xUbuntu_18.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_andykimpe.gpg > /dev/null
-apt-get update ; apt-get -y dist-upgrade
+apt-get update
+apt-get -y dist-upgrade
 apt-get -y install curl libcurl3 libcurl4
 rm -f /etc/apt/sources.list.d/home:andykimpe.list
 add-apt-repository ppa:ondrej/apache2 -y -s
