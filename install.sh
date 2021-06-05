@@ -47,19 +47,10 @@ phpenmod -v $VERSION mcrypt
 phpenmod -v $VERSION mbstring
 a2enmod rewrite
 wget https://raw.githubusercontent.com/andykimpe/ubuntu-apache-install/master/apache2.conf -O /etc/apache2/apache2.conf
+sed -i 's|80|$PORT|' "/etc/apache2/ports.conf"
+sed -i 's|80|$PORT|' "/etc/apache2/sites-available/000-default.conf"
+sed -i 's|443|$PORTSSL|' "/etc/apache2/sites-available/default-ssl.conf"
 FILE1="/home/xtreamcodes/iptv_xtream_codes/wwwdir/index.php"
 FILE2="/home/streamcreed/wwwdir/index.php"
-if test -f "$FILE1" ;then
-    wget https://github.com/amidevous/ubuntu-apache-install/raw/master/ports.conf -O /etc/apache2/ports.conf
-    wget https://github.com/amidevous/ubuntu-apache-install/raw/master/000-default.conf -O /etc/apache2/sites-available/000-default.conf
-    wget https://github.com/amidevous/ubuntu-apache-install/raw/master/default-ssl.conf -O /etc/apache2/sites-available/default-ssl.conf
-    service apache2 restart
-else if test -f "$FILE2" ;then
-    wget https://github.com/amidevous/ubuntu-apache-install/raw/master/ports.conf -O /etc/apache2/ports.conf
-    wget https://github.com/amidevous/ubuntu-apache-install/raw/master/000-default.conf -O /etc/apache2/sites-available/000-default.conf
-    wget https://github.com/amidevous/ubuntu-apache-install/raw/master/default-ssl.conf -O /etc/apache2/sites-available/default-ssl.conf
-    service apache2 restart
-else
-    service apache2 restart
-fi
+service apache2 restart
 fi
