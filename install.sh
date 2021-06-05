@@ -48,9 +48,10 @@ phpenmod -v $VERSION mcrypt
 phpenmod -v $VERSION mbstring
 a2enmod rewrite
 wget https://raw.githubusercontent.com/andykimpe/ubuntu-apache-install/master/apache2.conf -O /etc/apache2/apache2.conf
-sed -i 's|80|$PORT|' "/etc/apache2/ports.conf"
-sed -i 's|80|$PORT|' "/etc/apache2/sites-available/000-default.conf"
-sed -i 's|443|$PORTSSL|' "/etc/apache2/sites-available/default-ssl.conf"
+sed -i "s/80/$PORTSSL/g" "/etc/apache2/ports.conf"
+sed -i "s/443/$PORTSSL/g" "/etc/apache2/ports.conf"
+sed -i "s/80/$PORTSSL/g" "/etc/apache2/sites-available/000-default.conf"
+sed -i "s/443/$PORTSSL/g" "/etc/apache2/sites-available/default-ssl.conf"
 FILE1="/home/xtreamcodes/iptv_xtream_codes/wwwdir/index.php"
 FILE2="/home/streamcreed/wwwdir/index.php"
 service apache2 restart
