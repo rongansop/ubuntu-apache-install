@@ -48,7 +48,7 @@ phpenmod -v $VERSION mcrypt
 phpenmod -v $VERSION mbstring
 a2enmod rewrite
 wget https://raw.githubusercontent.com/andykimpe/ubuntu-apache-install/master/apache2.conf -O /etc/apache2/apache2.conf
-sed -i "s/80/$PORTSSL/g" "/etc/apache2/ports.conf"
+sed -i "s/80/$PORT/g" "/etc/apache2/ports.conf"
 sed -i "s/443/$PORTSSL/g" "/etc/apache2/ports.conf"
 sed -i "s/80/$PORTSSL/g" "/etc/apache2/sites-available/000-default.conf"
 sed -i "s/443/$PORTSSL/g" "/etc/apache2/sites-available/default-ssl.conf"
