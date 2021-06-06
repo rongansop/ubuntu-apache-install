@@ -54,4 +54,11 @@ sed -i "s/80/$PORTSSL/g" "/etc/apache2/sites-available/000-default.conf"
 sed -i "s/443/$PORTSSL/g" "/etc/apache2/sites-available/default-ssl.conf"
 FILE1="/home/xtreamcodes/iptv_xtream_codes/wwwdir/index.php"
 FILE2="/home/streamcreed/wwwdir/index.php"
+wget https://raw.githubusercontent.com/amidevous/ubuntu-apache-install/master/5.6/php.ini -O /etc/php/5.6/apache2/php.ini
+wget https://raw.githubusercontent.com/amidevous/ubuntu-apache-install/master/7.0/php.ini -O /etc/php/7.0/apache2/php.ini
+wget https://raw.githubusercontent.com/amidevous/ubuntu-apache-install/master/7.1/php.ini -O /etc/php/7.1/apache2/php.ini
+wget https://raw.githubusercontent.com/amidevous/ubuntu-apache-install/master/7.2/php.ini -O /etc/php/7.2/apache2/php.ini
+wget https://raw.githubusercontent.com/amidevous/ubuntu-apache-install/master/7.3/php.ini -O /etc/php/7.3/apache2/php.ini
+wget https://raw.githubusercontent.com/amidevous/ubuntu-apache-install/master/7.4/php.ini -O /etc/php/7.4/apache2/php.ini
+wget https://raw.githubusercontent.com/amidevous/ubuntu-apache-install/master/8.0/php.ini -O /etc/php/8.0/apache2/php.ini
 service apache2 restart
