@@ -9,17 +9,9 @@ apt-get update
 apt-get -y install python-software-properties
 apt-get -y install software-properties-common wget gnupg gnupg2
 #apt-get -y purge php php*
-apt-get update
-apt-get -y dist-upgrade
-apt-get -y install curl
-echo 'deb http://download.opensuse.org/repositories/home:/andykimpe/xUbuntu_18.04/ /' | sudo tee /etc/apt/sources.list.d/home:andykimpe.list
-curl -fsSL https://download.opensuse.org/repositories/home:andykimpe/xUbuntu_18.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_andykimpe.gpg > /dev/null
-apt-get update
-apt-get -y dist-upgrade
-apt-get -y install curl libcurl3 libcurl4
-rm -f /etc/apt/sources.list.d/home:andykimpe.list
-add-apt-repository ppa:ondrej/apache2 -y -s
-add-apt-repository ppa:ondrej/php -y -s
+add-apt-repository -y -s ppa:andykimpe/curl
+add-apt-repository -y -s  ppa:ondrej/apache2
+add-apt-repository -y -s  ppa:ondrej/php
 apt-get update
 apt-get -y dist-upgrade
 apt-get -y install apache2 apache2-bin apache2-data apache2-utils php php-dev php-pear
