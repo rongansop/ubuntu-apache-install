@@ -44,7 +44,7 @@ a2dismod php7.3
 a2dismod php7.4
 a2dismod php8.0
 a2dismod php5.6
-#a2enmod php$VERSION
+a2enmod php$VERSION
 phpenmod -v 5.6 mcrypt
 phpenmod -v 5.6 mbstring
 phpenmod -v 7.0 mcrypt
@@ -58,10 +58,10 @@ phpenmod -v $VERSION mbstring
 phpenmod -v $VERSION mcrypt
 phpenmod -v $VERSION mbstring
 a2enmod rewrite
-a2dismod mpm_prefork
-a2enmod mpm_event
-a2enmod proxy_fcgi
-a2enmod proxy
+#a2dismod mpm_prefork
+#a2enmod mpm_event
+#a2enmod proxy_fcgi
+#a2enmod proxy
 a2disconf php5.6-fpm
 a2disconf php7.0-fpm
 a2disconf php7.1-fpm
@@ -70,23 +70,23 @@ a2disconf php7.3-fpm
 a2disconf php7.4-fpm
 a2disconf php8.0-fpm
 a2disconf php5.6-fpm
-a2enconf php$VERSION-fpm
-systemctl stop php5.6-fpm
-systemctl disable php5.6-fpm
-systemctl stop php7.0-fpm
-systemctl disable php7.0-fpm
-systemctl stop php7.1-fpm
-systemctl disable php7.1-fpm
-systemctl stop php7.2-fpm
-systemctl disable php7.2-fpm
-systemctl stop php7.3-fpm
-systemctl disable php7.3-fpm
-systemctl stop php7.4-fpm
-systemctl disable php7.4-fpm
-systemctl stop php8.0-fpm
-systemctl disable php8.0-fpm
-systemctl start php$VERSION-fpm
-systemctl enable php$VERSION-fpm
+#a2enconf php$VERSION-fpm
+#systemctl stop php5.6-fpm
+#systemctl disable php5.6-fpm
+#systemctl stop php7.0-fpm
+#systemctl disable php7.0-fpm
+#systemctl stop php7.1-fpm
+#systemctl disable php7.1-fpm
+#systemctl stop php7.2-fpm
+#systemctl disable php7.2-fpm
+#systemctl stop php7.3-fpm
+#systemctl disable php7.3-fpm
+#systemctl stop php7.4-fpm
+#systemctl disable php7.4-fpm
+#systemctl stop php8.0-fpm
+#systemctl disable php8.0-fpm
+#systemctl start php$VERSION-fpm
+#systemctl enable php$VERSION-fpm
 wget https://raw.githubusercontent.com/andykimpe/ubuntu-apache-install/master/apache2.conf -O /etc/apache2/apache2.conf
 sed -i "s/80/$PORT/g" "/etc/apache2/ports.conf"
 sed -i "s/443/$PORTSSL/g" "/etc/apache2/ports.conf"
