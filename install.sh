@@ -106,10 +106,10 @@ systemctl stop php8.2-fpm
 systemctl disable php8.2-fpm
 #systemctl start php$VERSION-fpm
 #systemctl enable php$VERSION-fpm
-wget https://raw.githubusercontent.com/andykimpe/ubuntu-apache-install/master/apache2.conf -O /etc/apache2/apache2.conf
-wget https://raw.githubusercontent.com/andykimpe/ubuntu-apache-install/master/ports.conf -O /etc/apache2/ports.conf
-wget https://raw.githubusercontent.com/andykimpe/ubuntu-apache-install/master/000-default.conf -O /etc/apache2/sites-available/000-default.conf
-wget https://raw.githubusercontent.com/andykimpe/ubuntu-apache-install/master/default-ssl.conf -O /etc/apache2/sites-available/default-ssl.conf
+wget https://raw.githubusercontent.com/amidevous/ubuntu-apache-install/master/apache2.conf -O /etc/apache2/apache2.conf
+wget https://raw.githubusercontent.com/amidevous/ubuntu-apache-install/master/ports.conf -O /etc/apache2/ports.conf
+wget https://raw.githubusercontent.com/amidevous/ubuntu-apache-install/master/000-default.conf -O /etc/apache2/sites-available/000-default.conf
+wget https://raw.githubusercontent.com/amidevous/ubuntu-apache-install/master/default-ssl.conf -O /etc/apache2/sites-available/default-ssl.conf
 sed -i "s/8080/$PORT/g" "/etc/apache2/ports.conf"
 sed -i "s/444/$PORTSSL/g" "/etc/apache2/ports.conf"
 sed -i "s/8080/$PORT/g" "/etc/apache2/sites-available/000-default.conf"
