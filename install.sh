@@ -107,12 +107,15 @@ systemctl disable php8.2-fpm
 #systemctl start php$VERSION-fpm
 #systemctl enable php$VERSION-fpm
 wget https://raw.githubusercontent.com/andykimpe/ubuntu-apache-install/master/apache2.conf -O /etc/apache2/apache2.conf
-sed -i "s/80/$PORT/g" "/etc/apache2/ports.conf"
+wget https://raw.githubusercontent.com/andykimpe/ubuntu-apache-install/master/ports.conf -O /etc/apache2/ports.conf
+wget https://raw.githubusercontent.com/andykimpe/ubuntu-apache-install/master/000-default.conf -O /etc/apache2/sites-available/000-default.conf
+wget https://raw.githubusercontent.com/andykimpe/ubuntu-apache-install/master/default-ssl.conf -O /etc/apache2/sites-available/default-ssl.conf
+sed -i "s/8080/$PORT/g" "/etc/apache2/ports.conf"
 sed -i "s/444/$PORTSSL/g" "/etc/apache2/ports.conf"
 sed -i "s/8080/$PORT/g" "/etc/apache2/sites-available/000-default.conf"
 sed -i "s/444/$PORTSSL/g" "/etc/apache2/sites-available/default-ssl.conf"
 wget http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
-tar xzf ioncube_loaders_lin_x86-64.tar.gz -C /usr/local && rm-f ioncube_loaders_lin_x86-64.tar.gz
+tar -xzf ioncube_loaders_lin_x86-64.tar.gz -C /usr/local && rm -f ioncube_loaders_lin_x86-64.tar.gz
 wget https://raw.githubusercontent.com/amidevous/ubuntu-apache-install/master/5.6/php.ini -O /etc/php/5.6/apache2/php.ini
 wget https://raw.githubusercontent.com/amidevous/ubuntu-apache-install/master/5.6/php.ini -O /etc/php/5.6/cli/php.ini
 wget https://raw.githubusercontent.com/amidevous/ubuntu-apache-install/master/5.6/php.ini -O /etc/php/5.6/fpm/php.ini
@@ -137,4 +140,7 @@ wget https://raw.githubusercontent.com/amidevous/ubuntu-apache-install/master/8.
 wget https://raw.githubusercontent.com/amidevous/ubuntu-apache-install/master/8.1/php.ini -O /etc/php/8.1/apache2/php.ini
 wget https://raw.githubusercontent.com/amidevous/ubuntu-apache-install/master/8.1/php.ini -O /etc/php/8.1/cli/php.ini
 wget https://raw.githubusercontent.com/amidevous/ubuntu-apache-install/master/8.1/php.ini -O /etc/php/8.1/fpm/php.ini
+wget https://raw.githubusercontent.com/amidevous/ubuntu-apache-install/master/8.2/php.ini -O /etc/php/8.2/apache2/php.ini
+wget https://raw.githubusercontent.com/amidevous/ubuntu-apache-install/master/8.2/php.ini -O /etc/php/8.2/cli/php.ini
+wget https://raw.githubusercontent.com/amidevous/ubuntu-apache-install/master/8.2/php.ini -O /etc/php/8.2/fpm/php.ini
 systemctl restart apache2
